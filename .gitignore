@@ -1,1 +1,8 @@
 /_install/
+Makefile.config
+debian/boost-statechart-viewer.debhelper.log
+debian/boost-statechart-viewer.substvars
+debian/boost-statechart-viewer/
+debian/files
+src/boost-statechart-viewer
+src/visualizer.so
