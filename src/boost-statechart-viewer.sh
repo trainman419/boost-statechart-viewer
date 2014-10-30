@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 # while [ $1 ]
 
@@ -13,7 +13,7 @@ then
     for src in "${@:2}"; do
 	echo "#include \""$src"\"" >> $s.cpp
     done
-    clang++ -Xclang -load -Xclang /home/petr/projects/boost-statechart-viewer/src/visualizer.so -Xclang -plugin -Xclang visualize-statechart -c $s.cpp
+    clang++ -Xclang -load -Xclang @libdir@/visualizer.so -Xclang -plugin -Xclang visualize-statechart -c $s.cpp
     dot -Tps $s.dot > $s.eps
     epstopdf $s.eps > $s.pdf
     rm $s.dot $s.eps $s.cpp
